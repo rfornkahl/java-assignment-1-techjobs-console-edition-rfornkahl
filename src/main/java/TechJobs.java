@@ -119,7 +119,22 @@ public class TechJobs {
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
-
-        System.out.println("printJobs is not implemented yet");
+//begin if statement to make sure more than one entry exists in the arrayList someJobs
+        if (someJobs.size() >= 1){
+            //if someJobs is greater than or equal to one we will iterate over the arrayList someJobs
+            for (int i=0; i < someJobs.size(); i++) {
+                System.out.println("*****");
+                //use a for loop to iterate over each job entry in somejobs
+                //print out each hashmap job entry, by envoking the keys (title, location, etc) and the values for
+                //the keys (ex location: saint louis)
+                for (Map.Entry<String, String> jobs : someJobs.get(i).entrySet()) {
+                    System.out.println(jobs.getKey() + ": " + jobs.getValue());
+                }
+                System.out.println("***** \n");}
+        }
+        //end the if statement, with an else that prints out that the there are no results for the request
+        else {
+            System.out.println("No Results");
+        }
     }
 }
